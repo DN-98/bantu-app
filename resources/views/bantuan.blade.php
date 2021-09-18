@@ -4,6 +4,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bantu App - Bantuan</title>
+    <style>
+        table, tr, td, th{
+            border: 1px solid black;
+            border-collapse: collapse;
+            text-align: center;
+            padding: 10px;
+        }
+
+        th{
+            background-color: aqua;
+        }
+    </style>
 </head>
 <body>
     <table>
@@ -11,10 +23,12 @@
             <th>Nama Bantuan</th>
             <th>Jumlah Bantuan</th>
         </tr>
+        <?php foreach ($bantuan as $bantuan):?>
         <tr>
-            <td>csr1</td>
-            <td>2</td>
+            <td><?=$bantuan->nama_bantuan?></td>
+            <td><?=$bantuan->count?></td>
         </tr>
+        <?php endforeach;?>
     </table>
 </body>
 </html>
