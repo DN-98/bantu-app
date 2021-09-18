@@ -22,4 +22,10 @@ class CrudModels extends Model
         return $result;
     }
 
+    public function getTotalWarga(){
+        $sql = "SELECT b.nama_bantuan, count(w.nik_warga)  FROM pemberian_bantuan as pb RIGHT JOIN warga as w ON pb.nik_warga = w.nik_warga LEFT JOIN bantuan as b ON pb.id_bantuan = b.id_bantuan GROUP BY nama_bantuan";
+        $result = DB::select($sql);
+        return $result;
+    }
+
 }

@@ -8,6 +8,8 @@ use App\Models\CrudModels;
 class Main extends Controller
 {
     public function index(){
-        echo view('main');
+        $model = new CrudModels();
+        $jumlah = $model->getTotalWarga();
+        echo view('main', ['jumlah'=>$jumlah]);
     }
 }
