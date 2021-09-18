@@ -11,10 +11,12 @@
             <th>Nama Warga</th>
             <th>No KK Warga</th>
         </tr>
+        <?php foreach ($penerima as $warga):?>
         <tr>
-            <td>budi</td>
-            <td>012134</td>
+            <td><?=$warga->nama_warga?></td>
+            <td><?=$warga->nokk_warga?></td>
         </tr>
+        <?php endforeach;?>
     </table>
 </body>
 </html>

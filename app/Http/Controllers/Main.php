@@ -9,7 +9,5 @@ class Main extends Controller
 {
     public function index(){
         echo view('main');
-        $model = new CrudModels();
-        $model->getDataPenerima();
     }
 }

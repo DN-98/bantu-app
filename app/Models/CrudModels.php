@@ -11,12 +11,15 @@ class CrudModels extends Model
     use HasFactory;
 
     public function getDataPenerima(){
-        $sql = "SELECT * FROM warga";
+        $sql = "SELECT w.nama_warga, w.nokk_warga FROM pemberian_bantuan as pb, warga as w where pb.nik_warga = w.nik_warga ";
         $result = DB::select($sql);
-        foreach ($result as $warga) {
-            echo $warga->nik_warga;
-        }
+        return $result;
+    }
 
+    public function getDataBantuan(){
+        $sql = "SELECT w.nama_warga, w.nokk_warga FROM pemberian_bantuan as pb, warga as w where pb.nik_warga = w.nik_warga ";
+        $result = DB::select($sql);
+        return $result;
     }
 
     public function hari_indo($tgl)
